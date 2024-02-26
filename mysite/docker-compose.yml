@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1
+
+  db:
+    image: mariadb:10.5.9
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+requirements.txt:
+```Django==4.2.2
+mysqlclient==2.0.35```
